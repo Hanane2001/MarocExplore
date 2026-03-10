@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ho_BZvDzoQCeGP__uyB6" name="Page-1">
-        <mxGraphModel dx="1429" dy="377" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+        <mxGraphModel dx="1189" dy="404" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -82,18 +82,18 @@
                         <mxPoint x="12" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="40" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="33" vertex="1" connectable="0">
+                <mxCell id="40" value="2..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="33" vertex="1" connectable="0">
                     <mxGeometry x="-0.7882" relative="1" as="geometry">
                         <mxPoint x="10" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="41" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Category&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-                    <mxGeometry x="870" y="240" width="140" height="200" as="geometry"/>
+                <mxCell id="41" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Category&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="226" width="140" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="42" value="montagne&lt;div&gt;plage&lt;/div&gt;&lt;div&gt;desert&lt;/div&gt;&lt;div&gt;riviere&lt;/div&gt;&lt;div&gt;monument&lt;/div&gt;&lt;div&gt;ville_imperiale&lt;/div&gt;&lt;div&gt;culture&lt;/div&gt;&lt;div&gt;aventure&lt;/div&gt;&lt;div&gt;gastronomie&lt;/div&gt;&lt;div&gt;nature&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="41">
+                <mxCell id="42" value="montagne&lt;div&gt;plage&lt;/div&gt;&lt;div&gt;desert&lt;/div&gt;&lt;div&gt;riviere&lt;/div&gt;&lt;div&gt;monument&lt;/div&gt;&lt;div&gt;ville_imperiale&lt;/div&gt;&lt;div&gt;culture&lt;/div&gt;&lt;div&gt;aventure&lt;/div&gt;&lt;div&gt;gastronomie&lt;/div&gt;&lt;div&gt;nature&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="41" vertex="1">
                     <mxGeometry y="40" width="140" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="18" target="41">
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;" parent="1" source="18" target="41" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
