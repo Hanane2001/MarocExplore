@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Itinerary;
 
 class ItineraryController extends Controller
 {
@@ -11,7 +12,7 @@ class ItineraryController extends Controller
      */
     public function index()
     {
-        //
+        return Itinerary::with('user')->get();
     }
 
     /**
@@ -19,7 +20,9 @@ class ItineraryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['title' => 'required|string','category' => 'required','duration' => 'required|integer']);
+        $itinerary = Itinerary::create(['title' => $request->title,'category' => $request->category,'duration' => $request->duration,'image' => $request->image,'user_id' => auth()->id()]);
+        return response()->json($itinerary,201);
     }
 
     /**
@@ -27,7 +30,7 @@ class ItineraryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Itinerary::findOrFail($id);
     }
 
     /**
@@ -35,7 +38,12 @@ class ItineraryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $itinerary = Itinerary::findOrFail($id);
+        if($itinerary->user_id != auth()->id()){
+            return response()->json(['message'=>'Unauthorized'],403);
+        }
+        $itinerary->update($request->all());
+        return response()->json($itinerary);
     }
 
     /**
@@ -43,6 +51,11 @@ class ItineraryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $itinerary = Itinerary::findOrFail($id);
+        if($itinerary->user_id != auth()->id()){
+            return response()->json(['message'=>'Unauthorized'],403);
+        }
+        $itinerary->delete();
+        return response()->json(['message'=>'Deleted']);
     }
 }
