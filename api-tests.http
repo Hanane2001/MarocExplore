@@ -1,0 +1,12 @@
+### Register a new user
+POST http://127.0.0.1:8000/api/logout
+Authorization: Bearer 2|DEzP6Og7qj1BE9OaSpT3LmQChXDG2c0JyejGxys7646a48db
+Content-Type: application/json
+
+{
+  "name": "Hanane",
+  "email": "hanane@example.com",
+  "password": "123456",
+  "password_confirmation": "123456"
+
+}

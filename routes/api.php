@@ -6,15 +6,15 @@ use App\Http\Controllers\ItineraryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FavoriteController;
 
+
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
+Route::middleware('auth:sanctum')->post('/logout',[AuthController::class,'logout']);
 
 Route::get('/itineraries', [ItineraryController::class,'index']);
 Route::get('/itineraries/{id}', [ItineraryController::class,'show']);
 
 Route::middleware('auth:sanctum')->group(function(){
-
-    Route::post('/logout', [AuthController::class,'logout']);
 
     Route::post('/itineraries', [ItineraryController::class,'store']);
     Route::put('/itineraries/{id}', [ItineraryController::class,'update']);
