@@ -13,6 +13,8 @@ Route::middleware('auth:sanctum')->post('/logout',[AuthController::class,'logout
 
 Route::get('/itineraries', [ItineraryController::class,'index']);
 Route::get('/itineraries/{id}', [ItineraryController::class,'show']);
+Route::get('/itineraries/{id}/destinations', [DestinationController::class,'index']);
+Route::get('/destinations/{id}', [DestinationController::class,'show']);
 
 Route::middleware('auth:sanctum')->group(function(){
 
@@ -21,6 +23,8 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::delete('/itineraries/{id}', [ItineraryController::class,'destroy']);
 
     Route::post('/destinations', [DestinationController::class,'store']);
+    Route::put('/destinations/{id}', [DestinationController::class,'update']);
+    Route::delete('/destinations/{id}', [DestinationController::class,'destroy']);
 
     Route::get('/favorites',[FavoriteController::class,'index']);
     Route::post('/itineraries/{id}/favorite',[FavoriteController::class,'store']);
