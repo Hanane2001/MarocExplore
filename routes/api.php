@@ -22,7 +22,9 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::post('/destinations', [DestinationController::class,'store']);
 
-    Route::post('/itineraries/{id}/favorite', [FavoriteController::class,'store']);
+    Route::get('/favorites',[FavoriteController::class,'index']);
+    Route::post('/itineraries/{id}/favorite',[FavoriteController::class,'store']);
+    Route::delete('/favorites/{id}/favorite',[FavoriteController::class,'destroy']);
 
 });
 ?>

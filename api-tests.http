@@ -1,12 +1,10 @@
 ### Register a new user
-POST http://127.0.0.1:8000/api/register
-# Authorization: Bearer 2|DEzP6Og7qj1BE9OaSpT3LmQChXDG2c0JyejGxys7646a48db
+POST http://127.0.0.1:8000/api/login
+Authorization: Bearer 3|2qxNIIoePnUsxBvHNdVj26f5cAI9Cj0zlf1Natfib6e7b5f6
 Content-Type: application/json
 
 {
-  "name": "walid",
-  "email": "walid@example.com",
-  "password": "123456",
-  "password_confirmation": "123456"
-
+  "name": "abdlhadi",
+  "email": "abdlhadi@example.com",
+  "password": "123456"
 }
