@@ -58,4 +58,16 @@ class ItineraryController extends Controller
         $itinerary->delete();
         return response()->json(['message'=>'Deleted']);
     }
+
+    public function filter(Request $request){
+        $query = Itinerary::query();
+        if($request->category){
+            $query->where('category', $request->category);
+        }
+        if($request->duration){
+            $query->where('duration', $request->duration);
+        }
+        $itineraries = $query->get();
+        return $query->get();
+    }
 }

@@ -12,6 +12,7 @@ Route::post('/login', [AuthController::class,'login']);
 Route::middleware('auth:sanctum')->post('/logout',[AuthController::class,'logout']);
 
 Route::get('/itineraries', [ItineraryController::class,'index']);
+Route::get('/itineraries/filter', [ItineraryController::class,'filter']);
 Route::get('/itineraries/{id}', [ItineraryController::class,'show']);
 Route::get('/itineraries/{id}/destinations', [DestinationController::class,'index']);
 Route::get('/destinations/{id}', [DestinationController::class,'show']);
