@@ -68,6 +68,6 @@ class ItineraryController extends Controller
             $query->where('duration', $request->duration);
         }
         $itineraries = $query->get();
-        return $query->get();
+        return response()->json($itineraries);
     }
 }

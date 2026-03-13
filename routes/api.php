@@ -9,7 +9,7 @@ use App\Http\Controllers\FavoriteController;
 
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
-Route::middleware('auth:sanctum')->post('/logout',[AuthController::class,'logout']);
+Route::post('/logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
 
 Route::get('/itineraries', [ItineraryController::class,'index']);
 Route::get('/itineraries/filter', [ItineraryController::class,'filter']);
