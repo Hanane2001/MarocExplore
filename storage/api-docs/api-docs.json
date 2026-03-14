@@ -99,6 +99,213 @@
                 ]
             }
         },
+        "/api/destinations": {
+            "get": {
+                "tags": [
+                    "Destinations"
+                ],
+                "summary": "Get all destinations",
+                "description": "Display a listing of the resource.",
+                "operationId": "b77633672e38c28f34c971e03fba189e",
+                "responses": {
+                    "200": {
+                        "description": "List of destinations"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Destinations"
+                ],
+                "summary": "Create a destination",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "27af999f18dfd1b7b8083c3b1718b492",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "longment",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "activite",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "place",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "food",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "itinerary_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Destination created successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/destinations/{id}": {
+            "get": {
+                "tags": [
+                    "Destinations"
+                ],
+                "summary": "Get destination by ID",
+                "description": "Display the specified resource.",
+                "operationId": "df0aec078fc487094108b4ccb0a56385",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Destination found"
+                    },
+                    "404": {
+                        "description": "Destination not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Destinations"
+                ],
+                "summary": "Update destination",
+                "description": "Update the specified resource in storage.",
+                "operationId": "09e3b6b10dfaed7696e9f0fb6605748f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "longment",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "activite",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "place",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "food",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Destination updated"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Destinations"
+                ],
+                "summary": "Delete destination",
+                "description": "Remove the specified resource from storage.",
+                "operationId": "dfbfce05ebf43f6ce8ef339668e11de9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Destination deleted"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            }
+        },
         "/api/itineraries": {
             "get": {
                 "tags": [
@@ -334,6 +541,10 @@
         {
             "name": "Auth",
             "description": "Auth"
+        },
+        {
+            "name": "Destinations",
+            "description": "Destinations"
         },
         {
             "name": "Itineraries",
