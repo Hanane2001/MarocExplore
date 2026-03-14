@@ -306,6 +306,91 @@
                 ]
             }
         },
+        "/api/favorites": {
+            "get": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Get user favorites",
+                "description": "Display a listing of the resource.",
+                "operationId": "81123175f76259d611e2c337477dfa5f",
+                "responses": {
+                    "200": {
+                        "description": "List of favorites"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/itineraries/{id}/favorite": {
+            "post": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Add itinerary to favorites",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "774041976ec1d2247448568fae19e82a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Itinerary ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Itinerary added to favorites"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/favorites/{id}/favorite": {
+            "delete": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Remove itinerary from favorites",
+                "description": "Remove the specified resource from storage.",
+                "operationId": "e1615eb618e97c17802c017344eeb5d1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Itinerary ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Removed from favorites"
+                    },
+                    "404": {
+                        "description": "Favorite not found"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctumAuth": []
+                    }
+                ]
+            }
+        },
         "/api/itineraries": {
             "get": {
                 "tags": [
@@ -545,6 +630,10 @@
         {
             "name": "Destinations",
             "description": "Destinations"
+        },
+        {
+            "name": "Favorites",
+            "description": "Favorites"
         },
         {
             "name": "Itineraries",

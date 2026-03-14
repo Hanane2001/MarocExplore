@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Favorite;
 use App\Models\Itinerary;
+use OpenApi\Attributes as OA;
 
 class FavoriteController extends Controller
 {
+    #[OA\Get(path: "/api/favorites",summary: "Get user favorites",tags: ["Favorites"],security: [["sanctumAuth" => []]])]
+    #[OA\Response(response: 200, description: "List of favorites")]
     /**
      * Display a listing of the resource.
      */
@@ -17,6 +20,9 @@ class FavoriteController extends Controller
         return response()->json($favorites);
     }
 
+    #[OA\Post(path: "/api/itineraries/{id}/favorite",summary: "Add itinerary to favorites",tags: ["Favorites"],security: [["sanctumAuth" => []]])]
+    #[OA\Parameter(name: "id",in: "path",required: true,description: "Itinerary ID",schema: new OA\Schema(type: "integer"))]
+    #[OA\Response(response: 201, description: "Itinerary added to favorites")]
     /**
      * Store a newly created resource in storage.
      */
@@ -35,6 +41,10 @@ class FavoriteController extends Controller
         //
     }
 
+    #[OA\Delete(path: "/api/favorites/{id}/favorite",summary: "Remove itinerary from favorites",tags: ["Favorites"],security: [["sanctumAuth" => []]])]
+    #[OA\Parameter(name: "id",in: "path",required: true,description: "Itinerary ID",schema: new OA\Schema(type: "integer"))]
+    #[OA\Response(response: 200, description: "Removed from favorites")]
+    #[OA\Response(response: 404, description: "Favorite not found")]
     /**
      * Remove the specified resource from storage.
      */
